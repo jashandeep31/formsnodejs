@@ -15,5 +15,9 @@ mongoose
     )
     .then(() => console.log("Connected to MongoDB"));
 
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+});
+
 app.use("/api/form", formRoutes);
 app.listen(3000, () => console.log("Listening on port 3000"));
