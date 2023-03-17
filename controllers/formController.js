@@ -30,7 +30,7 @@ exports.ContactForm = async (req, res) => {
 };
 
 exports.CallBackForm = async (req, res) => {
-    const { first_name, last_name, phone, email, time } = req.body;
+    const { first_name, last_name, phone, email, time, query } = req.body;
     const user = await User.findById(req.params.id);
 
     if (!user)
@@ -44,6 +44,7 @@ exports.CallBackForm = async (req, res) => {
             phone,
             email,
             time,
+            query,
         });
         res.status(200).json({
             status: "success",
