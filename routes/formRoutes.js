@@ -5,7 +5,7 @@ const formController = require("../controllers/formController");
 
 router.route("/contact/:id").post(formController.ContactForm);
 router.route("/callback/:id").post(formController.CallBackForm);
-
+router.route("/newsletter/:id").post(formController.NewsLetterForm);
 // router.get("/", async (req, res) => {
 //     await User.create({
 //         name: "greensweep",

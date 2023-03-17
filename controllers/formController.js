@@ -59,3 +59,27 @@ exports.CallBackForm = async (req, res) => {
         });
     }
 };
+exports.NewsLetterForm = async (req, res) => {
+    const { email } = req.body;
+    const user = await User.findById(req.params.id);
+    if (!user)
+        return res
+            .status(400)
+            .json({ status: "fail", message: "User not found" });
+    try {
+        const newsletter = await NewsLetter.create({
+            email,
+        });
+        res.status(200).json({
+            status: "success",
+            data: {
+                newsletter,
+            },
+        });
+    } catch (err) {
+        res.status(400).json({
+            status: "fail",
+            message: err,
+        });
+    }
+};

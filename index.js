@@ -18,7 +18,9 @@ mongoose
     .then(() => console.log("Connected to MongoDB"));
 
 app.get("/", (req, res) => {
-    res.send("Hello World! Welcome to the GreenSweep API");
+    res.send(
+        "Hello World! Welcome to the GreenSweep API subscribe to our newsletter to get the latest updates"
+    );
 });
 
 app.use("/api/form", formRoutes);
