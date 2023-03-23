@@ -5,6 +5,7 @@ const formRoutes = require("./routes/formRoutes");
 const cors = require("cors");
 app.use(cors());
 app.use(express.json());
+const port = 3000;
 
 mongoose
     .connect(
@@ -24,4 +25,4 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/form", formRoutes);
-app.listen(8000, () => console.log("Listening on port 3000"));
+app.listen(port, () => console.log(`Listening on port ${port}`));
